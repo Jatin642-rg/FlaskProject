@@ -22,8 +22,6 @@ def index():
         val = (name, college)
         cursor.execute(sql, val)
         db.commit()
-
-    # Fetch all the submitted form data
     cursor = db.cursor()
     cursor.execute("SELECT * FROM records")
     data = cursor.fetchall()
