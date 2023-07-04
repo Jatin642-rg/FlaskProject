@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 300px;
+            padding: 5px;
+        }
+
+        input[type="submit"] {
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Form Data</h1>
+
+    <form method="POST">
+        <label for="name">Name:</label>
+        <br>
+        <input type="text" id="name" name="name" required>
+        <br><br>
+
+        <label for="college">College:</label>
+        <br>
+        <input type="text" id="college" name="college" required>
+        <br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <h2>Submitted Data:</h2>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>Name</th>
+            <th>College</th>
+        </tr>
+        {% for row in data %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
